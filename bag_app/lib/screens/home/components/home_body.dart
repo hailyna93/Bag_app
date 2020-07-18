@@ -1,10 +1,15 @@
 import 'package:bag_app/constants.dart';
+import 'package:bag_app/models/products.dart';
+import 'package:bag_app/screens/details/details_screen.dart';
+import 'package:bag_app/screens/home/components/categories.dart';
+import 'package:bag_app/screens/home/components/item_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -16,39 +21,28 @@ class HomeBody extends StatelessWidget {
                 .copyWith(fontWeight: FontWeight.bold),
           ),
         ),
-        Categories()
+        Categories(),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+            child: GridView.builder(
+                itemCount: products.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: kDefaultPadding,
+                    crossAxisSpacing: kDefaultPadding,
+                    childAspectRatio: 0.75),
+                itemBuilder: (context, index) => ItemCard(
+                    product: products[index],
+                    press: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DetailScreen(
+                                  product: products[index],
+                                ))))),
+          ),
+        )
       ],
-    );
-  }
-}
-
-class Categories extends StatefulWidget {
-  @override
-  _CategoriesState createState() => _CategoriesState();
-}
-
-class _CategoriesState extends State<Categories> {
-  List<String> categories = ["Hand bag", "Jewellery", "Footwear", "Dress"];
-  int selectedIndex = 0;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 25,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: categories.length,
-        itemBuilder: (context, index) => buildCategory(index),
-      ),
-    );
-  }
-
-  Widget buildCategory(int index) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      child: Text(
-        categories[index],
-        style: TextStyle(fontWeight: FontWeight.bold, color: kTextColor),
-      ),
     );
   }
 }
