@@ -14,37 +14,40 @@ class Product {
       this.title});
 }
 
+String text =
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.";
+
 List<Product> products = [
   Product(
       id: 1,
       title: "Office Code",
       price: 234,
       size: 12,
-      description: "dummyText",
+      description: text,
       image: "assets/images/bag_1.png",
       color: Color(0xFF3D82AE)),
   Product(
       id: 2,
       title: "Office Code",
       price: 234,
-      size: 12,
-      description: "dummyText",
+      size: 8,
+      description: text,
       image: "assets/images/bag_2.png",
       color: Color(0xFFD3A984)),
   Product(
       id: 3,
       title: "Office Code",
       price: 234,
-      size: 12,
-      description: "dummyText",
+      size: 9,
+      description: text,
       image: "assets/images/bag_3.png",
       color: Color(0xFF989493)),
   Product(
       id: 4,
       title: "Office Code",
       price: 234,
-      size: 12,
-      description: "dummyText",
+      size: 10,
+      description: text,
       image: "assets/images/bag_4.png",
       color: Color(0xFFE6B398)),
   Product(
@@ -52,7 +55,7 @@ List<Product> products = [
       title: "Office Code",
       price: 234,
       size: 12,
-      description: "dummyText",
+      description: text,
       image: "assets/images/bag_5.png",
       color: Color(0xFFFB7883)),
   Product(
@@ -60,7 +63,7 @@ List<Product> products = [
       title: "Office Code",
       price: 234,
       size: 12,
-      description: "dummyText",
+      description: text,
       image: "assets/images/bag_6.png",
       color: Color(0xFF3D82AE)),
   Product(
@@ -68,7 +71,7 @@ List<Product> products = [
       title: "Office Code",
       price: 234,
       size: 12,
-      description: "dummyText",
+      description: text,
       image: "assets/images/bag_3.png",
       color: Color(0xFF3D82AE)),
   Product(
@@ -76,7 +79,7 @@ List<Product> products = [
       title: "Office Code",
       price: 234,
       size: 12,
-      description: "dummyText",
+      description: text,
       image: "assets/images/bag_4.png",
       color: Color(0xFF3D82AE)),
   Product(
@@ -84,7 +87,7 @@ List<Product> products = [
       title: "Office Code",
       price: 234,
       size: 12,
-      description: "dummyText",
+      description: text,
       image: "assets/images/bag_1.png",
       color: Color(0xFF3D82AE)),
   Product(
@@ -92,7 +95,7 @@ List<Product> products = [
       title: "Office Code",
       price: 234,
       size: 12,
-      description: "dummyText",
+      description: text,
       image: "assets/images/bag_2.png",
       color: Color(0xFF3D82AE)),
   Product(
@@ -100,7 +103,7 @@ List<Product> products = [
       title: "Office Code",
       price: 234,
       size: 12,
-      description: "dummyText",
+      description: text,
       image: "assets/images/bag_3.png",
       color: Color(0xFF3D82AE)),
   Product(
@@ -108,7 +111,7 @@ List<Product> products = [
       title: "Office Code",
       price: 234,
       size: 12,
-      description: "dummyText",
+      description: text,
       image: "assets/images/bag_4.png",
       color: Color(0xFF3D82AE))
 ];
